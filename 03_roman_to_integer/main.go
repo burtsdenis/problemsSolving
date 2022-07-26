@@ -21,10 +21,11 @@ func romanToInt(s string) int {
 	}
 
 	for i := 0; i < len(s); i++ {
-		if i + 1 < len(s) && romanSymbols[string(s[i])] < romanSymbols[string(s[i + 1])] {
-			result -= romanSymbols[string(s[i])]
+		str := string(s[i])
+		if i + 1 < len(s) && romanSymbols[str] < romanSymbols[string(s[i + 1])] {
+			result -= romanSymbols[str]
 		} else {
-			result += romanSymbols[string(s[i])]
+			result += romanSymbols[str]
 		}
 	}
 
